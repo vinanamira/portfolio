@@ -688,6 +688,11 @@ h3.my-profession
     font-size: 25px;
     color: var(--skin-color);
 }
+.contact .contact-info-item .icon .fa-brands
+{
+    font-size: 30px;
+    color: #0a66c2;
+}
 .contact .contact-info-item h4
 {
     font-size: 18px;
@@ -697,13 +702,6 @@ h3.my-profession
     margin: 15px 0 5px;
 }
 .contact .contact-info-item p
-{
-    font-size: 16px;
-    line-height: 25px;
-    color: var(--text-black-700);
-    font-weight: 400;
-}
-.contact .contact-info-item a
 {
     font-size: 16px;
     line-height: 25px;
