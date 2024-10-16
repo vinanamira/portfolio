@@ -25,13 +25,6 @@ const nav = document.querySelector(".nav"),
             }
         })
     }
-
-    document.querySelector('.logo-link').addEventListener('click', function(event) {
-        event.preventDefault();
-        showSection(this);
-        updateNav(this);
-
-    });
     
     function showSection(element) {
         const target = element.getAttribute("href").split("#")[1];
