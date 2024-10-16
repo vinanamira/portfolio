@@ -11,53 +11,55 @@ const nav = document.querySelector(".nav"),
     totalNavList = navList.length,
     allSection = document.querySelectorAll(".section"),
     totalSection = allSection.length;
-    for(let i=0; i<totalNavList; i++)
-    {
-        const a=navList[i].querySelector("a");
-        a.addEventListener("click", function()
-        {
-            removeBackSection();
-            for(let i=0; i<totalSection; i++)
-            {
-                allSection[i].classList.remove("back-section");
+    for(let i=0; i<totalNavList; i++) {
+        const a = navList[i].querySelector("a");
+        a.addEventListener("click", function(e) {
+            e.preventDefault();
+            for(let j=0; j<totalNavList; j++) {
+                navList[j].querySelector("a").classList.remove("active");
             }
-                for(let j=0; j<totalNavList; j++)
-                {
-                    if(navList[j].querySelector("a").classList.contains("active"))
-                    {
-                        addBackSection(j);
-                        // allSection[j].classList.add("back-section");
-                    }
-                    navList[j].querySelector("a").classList.remove("active");
-                }
-                this.classList.add("active")
-                showSection(this);
-                if(window.innerWidth < 1200)
-                {
-                    asideSectionTogglerBtn();
-                }
+            this.classList.add("active");
+            showSection(this);
+            if(window.innerWidth < 1200) {
+                asideSectionTogglerBtn();
+            }
         })
     }
-    function removeBackSection()
-    {
-        for(let i=0; i<totalSection; i++)
-        {
-            allSection[i].classList.remove("back-section");
-        }
-    }
-    function addBackSection(num)
-    {
-        allSection[num].classList.add("back-section");
-    }
-    function showSection(element)
-    {
-        for(let i=0; i<totalSection; i++)
-        {
-            allSection[i].classList.remove("active");
-        }
+
+    document.querySelector('.logo-link').addEventListener('click', function(event) {
+        event.preventDefault();
+        showSection(this);
+        updateNav(this);
+
+    });
+    
+    function showSection(element) {
         const target = element.getAttribute("href").split("#")[1];
-        document.querySelector("#" + target).classList.add("active")
+        const currentActive = document.querySelector(".section.active");
+        
+        if (currentActive) {
+            currentActive.classList.remove("active");
+            currentActive.classList.add("back-section");
+        }
+        
+        // Hapus kelas back-section dari semua section kecuali yang aktif sebelumnya
+        allSection.forEach(section => {
+            if (section !== currentActive) {
+                section.classList.remove("back-section");
+            }
+        });
+        
+        const targetSection = document.querySelector("#" + target);
+        targetSection.classList.add("active");
+        targetSection.classList.remove("back-section");
+        
+        setTimeout(() => {
+            if (currentActive) {
+                currentActive.classList.remove("back-section");
+            }
+        }, 1000); 
     }
+
     function updateNav(element)
     {
         for(let i=0; i<totalNavList; i++)
@@ -70,14 +72,9 @@ const nav = document.querySelector(".nav"),
             }
         }
     }
-    document.querySelector(".hire-me").addEventListener("click", function()
-    {
-        const sectionIndex = this.getAttribute("data-section-index");
-        // console.log(sectionIndex);
+    document.querySelector(".hire-me").addEventListener("click", function() {
         showSection(this);
         updateNav(this);
-        removeBackSection();
-        addBackSection(sectionIndex);
     })
     const navTogglerBtn = document.querySelector(".nav-toggler"),
         aside = document.querySelector(".aside");
