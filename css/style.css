@@ -20,6 +20,8 @@ body
     line-height: 1.5;
     font-size: 16px;
     font-family: 'Poppins' sans-serif;
+    overflow-y: auto; /* Pastikan body dapat di-scroll */
+    margin: 0;
 }
 *
 {
@@ -63,6 +65,7 @@ ul
     z-index: 2;
     opacity: 1;
     animation: slideSection 1s ease;
+    background-color:;
 }
 @keyframes slideSection
 {
