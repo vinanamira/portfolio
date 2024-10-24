@@ -12,19 +12,25 @@ window.addEventListener("scroll", () =>{
 })
 /* ===================================== Theme Colors ===================================== */
 const alternateStyles = document.querySelectorAll(".alternate-style");
-function setActiveStyle(color)
-{
+
+function setActiveStyle(color) {
     alternateStyles.forEach((style) => {
-        if(color === style.getAttribute("title"))
-        {
+        if (color === style.getAttribute("title")) {
             style.removeAttribute("disabled");
-        }
-        else
-        {
+            localStorage.setItem("themeColor", color); // Simpan warna yang dipilih ke localStorage
+        } else {
             style.setAttribute("disabled", "true");
         }
-    })
+    });
 }
+
+// Cek preferensi warna saat halaman dimuat
+window.addEventListener("load", () => {
+    const savedColor = localStorage.getItem("themeColor");
+    if (savedColor) {
+        setActiveStyle(savedColor); // Terapkan warna yang disimpan
+    }
+});
 /* ===================================== Theme Light and Dark Mode ===================================== */
 const dayNight = document.querySelector(".day-night");
 const logoImg = document.querySelector("img.dark");
