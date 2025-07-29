@@ -54,6 +54,11 @@ const skillItem = [
         label: 'MQTT Explorer',
         desc: 'Data Inspector'
     },
+    {
+        imgSrc: '/images/openai.svg',
+        label: 'Open AI',
+        desc: 'AI API'
+    },
 ];
 
 const Skill = () => {
