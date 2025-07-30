@@ -7,55 +7,59 @@
  * Components
  */
 import SkillCard from "./SkillCard";
+import Php from "../images/php.svg";
+import Laravel from "../images/laravel.svg";
+import JavaScript from "../images/javascript.svg";
+import NodeJs from "../images/nodejs.svg";
+import ExpressJs from "../images/expressjs.svg";
+import MongoDB from "../images/mongodb.svg";
+import MySQL from "../images/mysql.svg";
+import Mqtt from "../images/mqtt.svg";
+import OpenAI from "../images/openai.svg";
 
 const skillItem = [
     {
-        imgSrc: '/images/figma.svg',
-        label: 'Figma',
-        desc: 'Design tool'
-    },
-    {
-        imgSrc: '/images/php.svg',
+        imgSrc: Php,
         label: 'PHP',
         desc: 'Interaction'
     },
     {
-        imgSrc: '/images/laravel.svg',
+        imgSrc: Laravel,
         label: 'Laravel',
         desc: 'PHP Framework'
     },
     {
-        imgSrc: '/images/javascript.svg',
+        imgSrc: JavaScript,
         label: 'JavaScript',
         desc: 'Interaction'
     },
     {
-        imgSrc: '/images/nodejs.svg',
+        imgSrc: NodeJs,
         label: 'NodeJS',
         desc: 'Web Server'
     },
     {
-        imgSrc: '/images/expressjs.svg',
+        imgSrc: ExpressJs,
         label: 'ExpressJS',
         desc: 'Node Framework'
     },
     {
-        imgSrc: '/images/mongodb.svg',
+        imgSrc: MongoDB,
         label: 'MongoDB',
         desc: 'Database'
     },
     {
-        imgSrc: '/images/mysql.svg',
+        imgSrc: MySQL,
         label: 'MySQL',
         desc: 'Database'
     },
     {
-        imgSrc: '/images/mqtt.svg',
+        imgSrc: Mqtt,
         label: 'MQTT Explorer',
         desc: 'Data Inspector'
     },
     {
-        imgSrc: '/images/openai.svg',
+        imgSrc: OpenAI,
         label: 'Open AI',
         desc: 'AI API'
     },

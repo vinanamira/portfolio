@@ -12,6 +12,7 @@ import { useState } from "react";
  * Components
  */
 import Navbar from "./Navbar";
+import Logo from "../images/logo.svg";
 
 const Header = () => {
     const [navOpen, setNavOpen] = useState(false);
@@ -22,7 +23,7 @@ const Header = () => {
                 <h1>
                     <a href="/" className="logo">
                         <img
-                            src="/images/logo.svg"
+                            src={Logo}
                             width={40}
                             height={40}
                             alt="Vina Namira"

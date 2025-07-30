@@ -3,6 +3,8 @@
  * @license Apache-2.0
  */
 
+import Logo from "../images/logo.svg";
+
 const aboutItems = [
     {
         label: 'Project done',
@@ -40,7 +42,7 @@ const About = () => {
                             ))
                         }
 
-                        <img src="/images/logo.svg" alt="Logo" width={30} height={30} className="ml-auto md:w-[40px] md:h-[40px]"/>
+                        <img src={Logo} alt="Logo" width={30} height={30} className="ml-auto md:w-[40px] md:h-[40px]"/>
                     </div>
                 </div>
 

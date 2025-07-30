@@ -4,6 +4,10 @@
  */
 
 import ProjectCard from "./ProjectCard";
+import Project1 from "../images/project-1.png";
+import Project2 from "../images/project-2.png";
+import Project3 from "../images/project-3.png";
+import Project4 from "../images/project-4.png";
 
 /**
  * Components
@@ -11,22 +15,28 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
     {
-      imgSrc: '/images/project-1.png',
+      imgSrc: Project1,
       title: 'Hematrik',
       tags: ['API', 'Development', 'Data Management'],
       projectLink: 'https://hematrik.id/'
     },
     {
-      imgSrc: '/images/project-2.png',
+      imgSrc: Project2,
       title: 'Alitnest',
       tags: ['API', 'Development'],
       projectLink: 'https://github.com/vinanamira/alitnest-be'
     },
     {
-      imgSrc: '/images/project-3.png',
+      imgSrc: Project3,
       title: 'LMS Cheva',
       tags: ['API', 'Development'],
       projectLink: 'https://github.com/vinanamira/lms-cheva-be'
+    },
+    {
+      imgSrc: Project4,
+      title: 'KawalTani',
+      tags: ['API', 'Development', 'Chatbot'],
+      projectLink: 'https://github.com/vinanamira/kawaltani-chatbot-be'
     }
 ];
 

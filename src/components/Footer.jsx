@@ -7,6 +7,7 @@
  * Components
  */
 import { ButtonPrimary } from "./Button";
+import Logo from "../images/logo.svg";
 
 const sitemap = [
     {
@@ -21,10 +22,10 @@ const sitemap = [
         label: 'Work',
         href: '#work'
     },
-    {
-        label: 'Reviews',
-        href: '#reviews'
-    },
+    // {
+    //     label: 'Reviews',
+    //     href: '#reviews'
+    // },
     {
         label: 'Contact me',
         href: '#contact'
@@ -98,7 +99,7 @@ const Footer = () => {
 
                 <div className="flex items-center justify-between pt-10 mb-8">
                     <a href="/" className="logo reveal-up">
-                        <img src="images/logo.svg" width={40} height={40} alt="Logo" />
+                        <img src={Logo} width={40} height={40} alt="Logo" />
                     </a>
 
                     <p className="text-zinc-500 text-sm reveal-up">

@@ -3,58 +3,79 @@
  * @license Apache-2.0
  */
 
-/**
- * Node modules
- */
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
-/** Register gsap plugins */
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = ({ navOpen }) => {
-    const activeBox = useRef();
+    const activeBox = useRef(null);
+    const container = useRef(null);
 
-    useEffect(() => {
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll(".nav-link");
+    useGSAP(() => {
+        const timer = setTimeout(() => {
+            const sections = gsap.utils.toArray("section");
+            const navLinks = gsap.utils.toArray(".nav-link");
 
-        sections.forEach((section, index) => {
-            ScrollTrigger.create({
-                trigger: section,
-                start: "top 25%",   // Penyesuaian posisi agar lebih akurat
-                end: "bottom 25%",
-                onEnter: () => setActiveLink(index),
-                onEnterBack: () => setActiveLink(index)
+            if (sections.length === 0 || navLinks.length === 0) return;
+
+            const setActiveLink = (index) => {
+                if (index < 0 || index >= navLinks.length) return;
+
+                navLinks.forEach(link => link.classList.remove("active"));
+                navLinks[index].classList.add("active");
+
+                const link = navLinks[index];
+                
+                // Animasi dibuat lebih cepat (duration: 0.2)
+                if (activeBox.current) {
+                    gsap.to(activeBox.current, {
+                        top: link.offsetTop,
+                        left: link.offsetLeft,
+                        width: link.offsetWidth,
+                        height: link.offsetHeight,
+                        duration: 0.2, // Durasi dipercepat
+                        ease: "power2.out"
+                    });
+                }
+            };
+
+            sections.forEach((section, index) => {
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "top center-=100",
+                    end: "bottom center-=100",
+                    onEnter: () => setActiveLink(index),
+                    onEnterBack: () => setActiveLink(index),
+                });
             });
-        });
 
-        const setActiveLink = (index) => {
-            navLinks.forEach(link => link.classList.remove("active"));
-            navLinks[index].classList.add("active");
+            setActiveLink(0);
 
-            const link = navLinks[index];
-            activeBox.current.style.top = link.offsetTop + 'px';
-            activeBox.current.style.left = link.offsetLeft + 'px';
-            activeBox.current.style.width = link.offsetWidth + 'px';
-            activeBox.current.style.height = link.offsetHeight + 'px';
+        }, 100);
+
+        return () => {
+            clearTimeout(timer);
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
-    }, []);
 
+    }, { scope: container });
+
+    // Link 'Contact' yang ada di mobile menu sudah dihapus dari sini
     const navItems = [
-        { label: 'Home', link: '#home', className: 'nav-link active' },
-        { label: 'About', link: '#about', className: 'nav-link' },
-        { label: 'Tools', link: '#tools', className: 'nav-link' },
-        { label: 'Work', link: '#work', className: 'nav-link' },
-        { label: 'Contact', link: '#contact', className: 'nav-link md:hidden' }
+        { label: 'Home', link: '#home' },
+        { label: 'About', link: '#about' },
+        { label: 'Tools', link: '#tools' },
+        { label: 'Work', link: '#work' },
     ];
 
     return (
-        <nav className={'navbar ' + (navOpen ? 'active' : '')}>
-            {navItems.map(({ label, link, className }, key) => (
-                <a href={link} key={key} className={className}>
+        <nav ref={container} className={'navbar ' + (navOpen ? 'active' : '')}>
+            {navItems.map(({ label, link }, key) => (
+                <a href={link} key={key} className="nav-link">
                     {label}
                 </a>
             ))}
