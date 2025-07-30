@@ -18,7 +18,7 @@ const works = [
       imgSrc: Project1,
       title: 'Hematrik',
       tags: ['API', 'Development', 'Data Management'],
-      projectLink: 'https://hematrik.id/'
+      projectLink: 'https://github.com/vinanamira/hematrik-be'
     },
     {
       imgSrc: Project2,
