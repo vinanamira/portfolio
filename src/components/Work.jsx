@@ -4,40 +4,40 @@
  */
 
 import ProjectCard from "./ProjectCard";
-import Project1 from "../images/project-1.png";
-import Project2 from "../images/project-2.png";
-import Project3 from "../images/project-3.png";
-import Project4 from "../images/project-4.png";
+import Hematrik from "../images/project-1.png";
+import Alitnest from "../images/project-2.png";
+import Cheva from "../images/project-3.png";
+import KawalTani from "../images/project-4.png";
 
 /**
  * Components
  */
 
 const works = [
+   {
+      imgSrc: KawalTani,
+      title: 'KawalTani',
+      tags: ['API', 'Development', 'Chatbot'],
+      projectLink: 'https://github.com/vinanamira/kawaltani-chatbot-be'
+    },
     {
-      imgSrc: Project1,
+      imgSrc: Hematrik,
       title: 'Hematrik',
       tags: ['API', 'Development', 'Data Management'],
       projectLink: 'https://github.com/vinanamira/hematrik-be'
     },
     {
-      imgSrc: Project2,
+      imgSrc: Alitnest,
       title: 'Alitnest',
       tags: ['API', 'Development'],
       projectLink: 'https://github.com/vinanamira/alitnest-be'
     },
     {
-      imgSrc: Project3,
+      imgSrc: Cheva,
       title: 'LMS Cheva',
       tags: ['API', 'Development'],
       projectLink: 'https://github.com/vinanamira/lms-cheva-be'
     },
-    {
-      imgSrc: Project4,
-      title: 'KawalTani',
-      tags: ['API', 'Development', 'Chatbot'],
-      projectLink: 'https://github.com/vinanamira/kawaltani-chatbot-be'
-    }
 ];
 
 const Work = () => {
