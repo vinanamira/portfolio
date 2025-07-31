@@ -7,9 +7,9 @@
  * Components
  */
 import SkillCard from "./SkillCard";
-import Php from "../images/php.svg";
+// import Php from "../images/php.svg";
 import Laravel from "../images/laravel.svg";
-import JavaScript from "../images/javascript.svg";
+// import JavaScript from "../images/javascript.svg";
 import NodeJs from "../images/nodejs.svg";
 import ExpressJs from "../images/expressjs.svg";
 import MongoDB from "../images/mongodb.svg";
@@ -19,19 +19,9 @@ import OpenAI from "../images/openai.svg";
 
 const skillItem = [
     {
-        imgSrc: Php,
-        label: 'PHP',
-        desc: 'Interaction'
-    },
-    {
         imgSrc: Laravel,
         label: 'Laravel',
         desc: 'PHP Framework'
-    },
-    {
-        imgSrc: JavaScript,
-        label: 'JavaScript',
-        desc: 'Interaction'
     },
     {
         imgSrc: NodeJs,
