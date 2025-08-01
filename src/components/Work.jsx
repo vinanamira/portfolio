@@ -17,25 +17,25 @@ const works = [
    {
       imgSrc: KawalTani,
       title: 'KawalTani',
-      tags: ['API', 'Development', 'Chatbot'],
+      tags: ['Laravel', 'MySQL', 'OpenAI'],
       projectLink: 'https://github.com/vinanamira/kawaltani-chatbot-be'
     },
     {
       imgSrc: Hematrik,
       title: 'Hematrik',
-      tags: ['API', 'Development', 'Data Management'],
+      tags: ['Express.Js', 'MySQL', 'MQTT', 'Cron-Job'],
       projectLink: 'https://github.com/vinanamira/hematrik-be'
     },
     {
       imgSrc: Alitnest,
       title: 'Alitnest',
-      tags: ['API', 'Development'],
+      tags: ['Express.Js', 'MongoDB', 'OpenAI'],
       projectLink: 'https://github.com/vinanamira/alitnest-be'
     },
     {
       imgSrc: Cheva,
       title: 'LMS Cheva',
-      tags: ['API', 'Development'],
+      tags: ['Laravel', 'MySQL'],
       projectLink: 'https://github.com/vinanamira/lms-cheva-be'
     },
 ];
