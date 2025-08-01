@@ -16,6 +16,7 @@ import MongoDB from "../images/mongodb.svg";
 import MySQL from "../images/mysql.svg";
 import Mqtt from "../images/mqtt.svg";
 import OpenAI from "../images/openai.svg";
+import Docker from "../images/docker.svg";
 
 const skillItem = [
     {
@@ -53,6 +54,11 @@ const skillItem = [
         label: 'Open AI',
         desc: 'AI API'
     },
+    {
+        imgSrc: Docker,
+        label: 'Docker',
+        desc: 'Containerization'
+    }
 ];
 
 const Skill = () => {
