@@ -22,9 +22,9 @@ const Projects = () => {
           description="Hematrik is an IoT-based energy monitoring system that enables the real-time monitoring of electronic devices (lights, dispensers, and AC)."
         />
         <ProjectCard
-          src="/alitnest.png"
+          src="/Alitnest.png"
           title="Alitnest"
-          description="Alitnest is an application that helps users manage a healthy lifestyle with personalized, measurable, and effective nutrition solutions. "
+          description="Alitnest is an application that helps users manage a healthy lifestyle with personalized, measurable, and effective nutrition solutions."
         />
       </div>
     </div>
